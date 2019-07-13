@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-13T11:51:18+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Just FYI stuff</title><subtitle>This is my personal blog contain any information i want to share. Content can be varying with random topic or about my personal story.</subtitle><entry><title type="html">My First Blog Post</title><link href="http://localhost:4000/first/post/2019/07/13/welcome-to-jekyll.html" rel="alternate" type="text/html" title="My First Blog Post" /><published>2019-07-13T11:23:10+07:00</published><updated>2019-07-13T11:23:10+07:00</updated><id>http://localhost:4000/first/post/2019/07/13/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/first/post/2019/07/13/welcome-to-jekyll.html">&lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;p&gt;This is my very first post on my blog after several month or years (?) planning to do it
+finally i’ve really done it (eventhough just meaningless post) :)&lt;/p&gt;
+
+&lt;p&gt;This blog using jekyll a static theme generator specificly for building blog.
+Lack of documentation, but quite easy to use.&lt;/p&gt;
+
+&lt;p&gt;Warm Regards,&lt;/p&gt;</content><author><name></name></author><summary type="html">Hi,</summary></entry></feed>

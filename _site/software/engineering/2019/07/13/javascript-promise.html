@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>[SE][JAVASCRIPT] Promise in JS, is it necessary? | Just FYI stuff</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="[SE][JAVASCRIPT] Promise in JS, is it necessary?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this post i want to discuss about promise concept in javascript, i’ll start with describing what promise is and continue with discussion on how to use and will be closed with conclusion is this concept necessary or not." />
+<meta property="og:description" content="In this post i want to discuss about promise concept in javascript, i’ll start with describing what promise is and continue with discussion on how to use and will be closed with conclusion is this concept necessary or not." />
+<link rel="canonical" href="http://localhost:4000/software/engineering/2019/07/13/javascript-promise.html" />
+<meta property="og:url" content="http://localhost:4000/software/engineering/2019/07/13/javascript-promise.html" />
+<meta property="og:site_name" content="Just FYI stuff" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-13T17:30:00+07:00" />
+<script type="application/ld+json">
+{"description":"In this post i want to discuss about promise concept in javascript, i’ll start with describing what promise is and continue with discussion on how to use and will be closed with conclusion is this concept necessary or not.","@type":"BlogPosting","url":"http://localhost:4000/software/engineering/2019/07/13/javascript-promise.html","headline":"[SE][JAVASCRIPT] Promise in JS, is it necessary?","dateModified":"2019-07-13T17:30:00+07:00","datePublished":"2019-07-13T17:30:00+07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/software/engineering/2019/07/13/javascript-promise.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Just FYI stuff" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Just FYI stuff</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">[SE][JAVASCRIPT] Promise in JS, is it necessary?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-07-13T17:30:00+07:00" itemprop="datePublished">Jul 13, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In this post i want to discuss about promise concept in javascript,
+i’ll start with describing what promise is and continue with discussion on 
+how to use and will be closed with conclusion is this concept necessary or not.</p>
+
+<p>First of all lets take a look on what is promise in javascript</p>
+
+<p>according to <code class="highlighter-rouge">https://developer.mozilla.org</code></p>
+<blockquote>
+  <p>The Promise object is used for deferred and asynchronous computations.
+A Promise represents an operation that hasn’t completed yet,
+but is expected in the future.</p>
+</blockquote>
+
+<p>So promise is used to handle asynchronous computation in javascript.
+Its different concept from XHR or AJAX in JQuery but its tightly correlated.
+Simply you can translate promise as a callback to asynchronous process
+such as XHR or AJAX. Lets move to how to use it so that we can have better picture.</p>
+
+<p>Lets say i want to change my page title 3 seconds after user visit my page.
+I’ll use <code class="highlighter-rouge">setTimeout</code> to wait 3 seconds as this is simplest asynchronous
+process that we can try in JS.</p>
+
+<p>The code will be like this:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'title'</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">title</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'Changed Title'</span><span class="p">;</span>
+<span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>another thing is i want to give alert message if the title changed,
+in this case we can make use of promise to fulfill this problem.
+We can wrap above function inside of promise and use those promise object
+to set alert message.</p>
+
+<p>The code will be like this:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">tryPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'title'</span><span class="p">);</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'Changed Title'</span><span class="p">;</span>
+    <span class="nx">resolve</span><span class="p">();</span>
+  <span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">tryPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s1">'title changed'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>As you can see in snippet above, we can use promise object to set a callback
+for asynchronous process inside the promise. In the case above is an example
+of successfull asynchronous process where we use <code class="highlighter-rouge">resolve()</code> inside promise function 
+and <code class="highlighter-rouge">then()</code> when set the callback, aside from that we also can set rejected
+path by using <code class="highlighter-rouge">reject()</code> inside promise function and <code class="highlighter-rouge">catch()</code> to set callback.</p>
+
+<p>I’ll assume we already have better understanding on promise after the example.
+So my question is do we really need that?</p>
+
+<p>Lets take above case for example, can we achieve that without promise?
+Of course, simplest way is just to move our callback inside setTimeout</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'title'</span><span class="p">);</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'Changed Title'</span><span class="p">;</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">'title changed'</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>So promise can (almost) always be replaced by putting our desired function
+inside callback, we can use <code class="highlighter-rouge">if else</code> or <code class="highlighter-rouge">try catch</code> to replace promise
+<code class="highlighter-rouge">reject</code> and <code class="highlighter-rouge">finally</code> capability.</p>
+
+<p>But, you will face the necessary of using promise when you building large
+codebase and want to follow SOLID principle. It can make your code lookmore
+clean and structured, i’ll explain about this in the next post.</p>
+
+<p>So in conclusion, we dont really need promise for simple asynchronous callback
+process, XHR and AJAX have capability to do it without promise, but it will
+be very useful when you build large JS codebase with many file / class
+and you need to set a callback for asynchronous process across several class.
+In this case promise will help us tt create instead of one function calling
+several class for callback, we can pass promise as depedency injection
+to keep our codebase clean.</p>
+
+  </div><a class="u-url" href="/software/engineering/2019/07/13/javascript-promise.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Just FYI stuff</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Just FYI stuff</li><li><a class="u-email" href="mailto:me@amdibr.com">me@amdibr.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/amadibra"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">amadibra</span></a></li><li><a href="https://www.linkedin.com/in/ahmadibrahim"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">ahmadibrahim</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is my personal blog contain any information i want to share. Content can be varying with random topic or about my personal story.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-07-19T20:46:11+07:00</updated><id>/feed.xml</id><title type="html">Just FYI stuff</title><subtitle>This is my personal blog contain any information i want to share. Content can be varying with random topic or about my personal story.</subtitle><entry><title type="html">[SE] Conditional statement without comparison, simple but risky</title><link href="/software/engineering/2019/07/18/conditional-statement-without-comparison.html" rel="alternate" type="text/html" title="[SE] Conditional statement without comparison, simple but risky" /><published>2019-07-18T20:30:00+07:00</published><updated>2019-07-18T20:30:00+07:00</updated><id>/software/engineering/2019/07/18/conditional-statement-without-comparison</id><content type="html" xml:base="/software/engineering/2019/07/18/conditional-statement-without-comparison.html">&lt;p&gt;In this post i want to discuss about conditional statement specifically the one without comparison.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-21T17:02:23+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Just FYI stuff</title><subtitle>This is my personal blog contain any information i want to share. Content can be varying with random topic or about my personal story.</subtitle><entry><title type="html">[SE] Javascript Event Loop</title><link href="http://localhost:4000/software/engineering/2020/03/21/javascrip-event-loop.html" rel="alternate" type="text/html" title="[SE] Javascript Event Loop" /><published>2020-03-21T14:30:00+08:00</published><updated>2020-03-21T14:30:00+08:00</updated><id>http://localhost:4000/software/engineering/2020/03/21/javascrip-event-loop</id><content type="html" xml:base="http://localhost:4000/software/engineering/2020/03/21/javascrip-event-loop.html">&lt;p&gt;In this post i want to discuss about conditional statement specifically the one without comparison.&lt;/p&gt;
 
 &lt;p&gt;as we all know conditional statement is one of very basic logic that oftenly used
 in many situation, one of the syntax is like this&lt;/p&gt;
@@ -58,7 +58,180 @@ without comparison.&lt;/p&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;So be careful with the usage of this syntax, know your programming language behaviour
-and you’ll be safe.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this post i want to discuss about conditional statement specifically the one without comparison.</summary></entry><entry><title type="html">[SE][JAVASCRIPT] Promise in JS, is it necessary?</title><link href="/software/engineering/2019/07/13/javascript-promise.html" rel="alternate" type="text/html" title="[SE][JAVASCRIPT] Promise in JS, is it necessary?" /><published>2019-07-13T17:30:00+07:00</published><updated>2019-07-13T17:30:00+07:00</updated><id>/software/engineering/2019/07/13/javascript-promise</id><content type="html" xml:base="/software/engineering/2019/07/13/javascript-promise.html">&lt;p&gt;In this post i want to discuss about promise concept in javascript,
+and you’ll be safe.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this post i want to discuss about conditional statement specifically the one without comparison.</summary></entry><entry><title type="html">[SE] Ruby Memory Management</title><link href="http://localhost:4000/software/engineering/2020/03/21/ruby-memory-management.html" rel="alternate" type="text/html" title="[SE] Ruby Memory Management" /><published>2020-03-21T14:30:00+08:00</published><updated>2020-03-21T14:30:00+08:00</updated><id>http://localhost:4000/software/engineering/2020/03/21/ruby-memory-management</id><content type="html" xml:base="http://localhost:4000/software/engineering/2020/03/21/ruby-memory-management.html">&lt;p&gt;In this post i want to discuss about conditional statement specifically the one without comparison.&lt;/p&gt;
+
+&lt;p&gt;as we all know conditional statement is one of very basic logic that oftenly used
+in many situation, one of the syntax is like this&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somevalue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// doing something&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This logic usually used to check whether some variable value is equal to
+expected value or not, thus it also possible to use this to check
+whether some variable is exists, initialized, defined, or not.
+for example in javascript if you want to check whether some variable
+defined or not, you can write something like this:&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// do something&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Even with most of the high level programming language you can
+just write something like this&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//do something&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;However doing something like above is not recommended, why?
+depends on what programming language you use, but this statement not only reject
+undefined or null value, it also reject default value of data type.
+For example if you wrote code like above example,
+in javascript if &lt;code class=&quot;highlighter-rouge&quot;&gt;somevarible&lt;/code&gt; value is &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; (default value of int) it will rejected
+by those condition therefor it would not process command inside statement, same
+thing happened if &lt;code class=&quot;highlighter-rouge&quot;&gt;somevariable&lt;/code&gt; value is empty string &lt;code class=&quot;highlighter-rouge&quot;&gt;''&lt;/code&gt;.
+Sometimes developer not aware about this case where most of the time it will
+produce some bug to their program.&lt;/p&gt;
+
+&lt;p&gt;So here i list some of programming language behaviour with conditional statement
+without comparison.&lt;/p&gt;
+
+&lt;p&gt;Javascript:&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// null&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 0&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// ''&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// will not process to this&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Python:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somevariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# None
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 0
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# ''
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# []
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# {}
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# will not process to this
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So be careful with the usage of this syntax, know your programming language behaviour
+and you’ll be safe.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this post i want to discuss about conditional statement specifically the one without comparison.</summary></entry><entry><title type="html">[SE] Why VIM</title><link href="http://localhost:4000/software/engineering/2020/03/21/why-vim.html" rel="alternate" type="text/html" title="[SE] Why VIM" /><published>2020-03-21T14:30:00+08:00</published><updated>2020-03-21T14:30:00+08:00</updated><id>http://localhost:4000/software/engineering/2020/03/21/why-vim</id><content type="html" xml:base="http://localhost:4000/software/engineering/2020/03/21/why-vim.html">&lt;p&gt;As a coder you can’t be separated from your code editor. Every coder have their own favorite editor.
+Nowadays there are so many good editor that you can use for free, depends on your purpose and
+preferences you may have different favorite editor with your teammate.&lt;/p&gt;
+
+&lt;p&gt;Here i want to share my experience of using one of the or one and only my favorite code editor.
+As i mentioned above you can choose any code editor that match your preferences and most probably
+you can use it for free. Many editors out there has been become popular for the past several years
+because they are free and open source, editor such as Visual Studio Code, Atom, Sublime Text are
+powerful enough to support your coding process with several functionalities. However there is one
+editor that live long enough since early time of computer development and still become one of the
+most favorite among coders in this era, VIM. Yes this small lighweight simple editor that is
+embedded in your terminal is quite popular even in this day, there are many reasons why VIM
+can be so popular despite its lack of feature and not-so-good looking interface.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;You have what you need, you do not have what you do not need.&lt;/dt&gt;
+      &lt;dd&gt;can you imagine when you are forced to bring all the books you have even though you only need one of them?
+yah that exactly what you would feel when you install some IDE that include ton of built-in features and
+plugins that you do not even need. It consume memory space, it consume cpu power to initialize all of them, 
+it confuse you with hundred of buttons in the interface.
+with vim you got it plain, meaning nothing but text editor, however if you need more, then you have all
+of this open source vim plugins that you can find anywhere in the internet, there are many vim plugin manager
+that you can use to make your plugin management easier, library such as vim-plug and vundle proven
+can be very helpful in this case (at least from my own experience).&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;Nothing can be as helpful as VIM key bindings.&lt;/dt&gt;
+      &lt;dd&gt;I feel this is the main factor why i love vim. You do not need your mouse, you do not need arrows. 
+with VIM key bindings you can just focus typing your code, with your hands and your fingers always 
+stay in one area it make you type faster. No distractions outside of what you type. 
+Need to move cursor? use vim binding, need to find a word? use vim binding, need to do find and replace? 
+use vim binding, need to change sentences inside bracket? again, use vim binding.
+Vim bindings capable to do almost everything. It takes time to get used with the bindings 
+but once you get used to it then you will really enjoy to type anything.&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;You can choose your own style.&lt;/dt&gt;
+      &lt;dd&gt;VIM avaliable in several kind of distributions, you can choose whatever match your preferences.
+you like to code in terminal directly, use nvim or macvim. You prefer to have your own editor interface 
+separated from terminal, use gvim. They all based on the same vim config, so changing from one to another
+is not a big deal.&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So in summary i would suggest to try vim for at least one month for your code editor. I cannot
+guarante that you will like vim more than your current editor, but at least after a month of trying 
+you can compare it, and who knows that you might join VIM fanbase after that :)&lt;/p&gt;</content><author><name></name></author><summary type="html">As a coder you can’t be separated from your code editor. Every coder have their own favorite editor. Nowadays there are so many good editor that you can use for free, depends on your purpose and preferences you may have different favorite editor with your teammate.</summary></entry><entry><title type="html">[SE] Conditional statement without comparison, simple but risky</title><link href="http://localhost:4000/software/engineering/2019/07/18/conditional-statement-without-comparison.html" rel="alternate" type="text/html" title="[SE] Conditional statement without comparison, simple but risky" /><published>2019-07-18T21:30:00+08:00</published><updated>2019-07-18T21:30:00+08:00</updated><id>http://localhost:4000/software/engineering/2019/07/18/conditional-statement-without-comparison</id><content type="html" xml:base="http://localhost:4000/software/engineering/2019/07/18/conditional-statement-without-comparison.html">&lt;p&gt;In this post i want to discuss about conditional statement specifically the one without comparison.&lt;/p&gt;
+
+&lt;p&gt;as we all know conditional statement is one of very basic logic that oftenly used
+in many situation, one of the syntax is like this&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somevalue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// doing something&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This logic usually used to check whether some variable value is equal to
+expected value or not, thus it also possible to use this to check
+whether some variable is exists, initialized, defined, or not.
+for example in javascript if you want to check whether some variable
+defined or not, you can write something like this:&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// do something&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Even with most of the high level programming language you can
+just write something like this&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//do something&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;However doing something like above is not recommended, why?
+depends on what programming language you use, but this statement not only reject
+undefined or null value, it also reject default value of data type.
+For example if you wrote code like above example,
+in javascript if &lt;code class=&quot;highlighter-rouge&quot;&gt;somevarible&lt;/code&gt; value is &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; (default value of int) it will rejected
+by those condition therefor it would not process command inside statement, same
+thing happened if &lt;code class=&quot;highlighter-rouge&quot;&gt;somevariable&lt;/code&gt; value is empty string &lt;code class=&quot;highlighter-rouge&quot;&gt;''&lt;/code&gt;.
+Sometimes developer not aware about this case where most of the time it will
+produce some bug to their program.&lt;/p&gt;
+
+&lt;p&gt;So here i list some of programming language behaviour with conditional statement
+without comparison.&lt;/p&gt;
+
+&lt;p&gt;Javascript:&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;somevariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// null&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 0&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// ''&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// will not process to this&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Python:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somevariable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# None
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 0
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# ''
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# []
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# {}
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# will not process to this
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So be careful with the usage of this syntax, know your programming language behaviour
+and you’ll be safe.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this post i want to discuss about conditional statement specifically the one without comparison.</summary></entry><entry><title type="html">[SE][JAVASCRIPT] Promise in JS, is it necessary?</title><link href="http://localhost:4000/software/engineering/2019/07/13/javascript-promise.html" rel="alternate" type="text/html" title="[SE][JAVASCRIPT] Promise in JS, is it necessary?" /><published>2019-07-13T18:30:00+08:00</published><updated>2019-07-13T18:30:00+08:00</updated><id>http://localhost:4000/software/engineering/2019/07/13/javascript-promise</id><content type="html" xml:base="http://localhost:4000/software/engineering/2019/07/13/javascript-promise.html">&lt;p&gt;In this post i want to discuss about promise concept in javascript,
 i’ll start with describing what promise is and continue with discussion on 
 how to use and will be closed with conclusion is this concept necessary or not.&lt;/p&gt;
 
@@ -138,7 +311,7 @@ be very useful when you build large JS codebase with many file / class
 and you need to set a callback for asynchronous process across several class.
 In this case promise will help us tt create instead of one function calling
 several class for callback, we can pass promise as depedency injection
-to keep our codebase clean.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this post i want to discuss about promise concept in javascript, i’ll start with describing what promise is and continue with discussion on how to use and will be closed with conclusion is this concept necessary or not.</summary></entry><entry><title type="html">My First Blog Post</title><link href="/first/post/2019/07/13/welcome-to-jekyll.html" rel="alternate" type="text/html" title="My First Blog Post" /><published>2019-07-13T11:23:10+07:00</published><updated>2019-07-13T11:23:10+07:00</updated><id>/first/post/2019/07/13/welcome-to-jekyll</id><content type="html" xml:base="/first/post/2019/07/13/welcome-to-jekyll.html">&lt;p&gt;Hi,&lt;/p&gt;
+to keep our codebase clean.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this post i want to discuss about promise concept in javascript, i’ll start with describing what promise is and continue with discussion on how to use and will be closed with conclusion is this concept necessary or not.</summary></entry><entry><title type="html">My First Blog Post</title><link href="http://localhost:4000/first/post/2019/07/13/welcome-to-jekyll.html" rel="alternate" type="text/html" title="My First Blog Post" /><published>2019-07-13T12:23:10+08:00</published><updated>2019-07-13T12:23:10+08:00</updated><id>http://localhost:4000/first/post/2019/07/13/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/first/post/2019/07/13/welcome-to-jekyll.html">&lt;p&gt;Hi,&lt;/p&gt;
 
 &lt;p&gt;This is my very first post on my blog after several month or years (?) planning to do it
 finally i’ve really done it (eventhough just meaningless post) :)&lt;/p&gt;

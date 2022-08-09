@@ -42,3 +42,43 @@ so when the first execution has been finished (see stack above as current state)
 Heap Memory
 On the other side of stack memory, there's also heap memory to store objects created by your program. The difference is instead of storing function call stack and its local variable, heap memory will long lived objects, such as long running function (e.g web server) or global variable. Hence, in general heap memory usually will be having more size compare to stack memory, because many of the object that stored inside are long live one. (code example will ve attached soon)
 
+
+Memory Release
+
+I have explained above how an object created by your program being store into 2 different memories. Your RAM however will definitely have limited amount of memory, if your program keep storing new object your RAM won't be able to take it anymore at some point. Thats why all program have their way to release memory back to your operating system. Here are some methods used by MRI to decide which object can be deleted, and release the memory used by the object into operational system.
+
+Reference Counting
+
+This is common method used by many programming language to do garbage collection. What this method does is to keep count for every object created by the program, everytime the reference added the count will be increase, everytime the reference removed the count will be decreased. By the time the reference count reach to 0, the GC will delete the object and release the memory back to operating system.
+```
+def queryData(db)
+if __name__ == "__main__":
+	dbString = "ahmadibrahim:1234@127.0.0.1:5432/blog_db"
+	db = initializeDB(dbstring)
+	BlogManager = initBlogManager(db)
+```
+you can see simple example from code snipet above. Just pretend that i have intializeDB() that will init db connection, also initBlogManager() that init new blogManager object that have interface to some blog functions, i do not have the real implementation of those 2 functions but lets just pretend its there.
+You can see `db` object being created after the db initialize, and then it being used by `BlogManager` to init itself, hence the count of `db` object become 1
+```
+db = 1
+```
+
+```
+if __name__ == "__main__":
+	dbString = "ahmadibrahim:1234@127.0.0.1:5432/blog_db"
+	db = initializeDB(dbstring)
+	BlogManager = initBlogManager(db)
+	ArticleManager = initArticleManager(db)
+```
+Now i added another object which is `ArticleManager` which need the `db` object too to be initiated, hence the count of `db` object become 2
+```
+if __name__ == "__main__":
+	dbString = "ahmadibrahim:1234@127.0.0.1:5432/blog_db"
+	db = initializeDB(dbstring)
+	BlogManager = initBlogManager(db)
+	ArticleManager = initArticleManager(db)
+	del BlogManager
+	del ArticleManger
+```
+in above example i deleted 2 objects that have reference to `db` object, so the reference count will decrease to 0, at this point Garbage collector will pickup `db` object, delete it and release the memory back to operating system.
+

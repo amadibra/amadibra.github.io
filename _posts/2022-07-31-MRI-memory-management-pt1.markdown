@@ -40,5 +40,5 @@ see the stack above, it created by appending any function call to top of the sta
 so when the first execution has been finished (see stack above as current state) the top of the stack has been removed and the memory 'borrowed' for that stack's block will be freed. For now thats the only thing i can explain about stack memory, i'll put up more details when i learn more about this. So next to cover is heap memory
 
 Heap Memory
+On the other side of stack memory, there's also heap memory to store objects created by your program. The difference is instead of storing function call stack and its local variable, heap memory will long lived objects, such as long running function (e.g web server) or global variable. Hence, in general heap memory usually will be having more size compare to stack memory, because many of the object that stored inside are long live one. (code example will ve attached soon)
 
-TBC, changing laptop need to commit first :)

@@ -82,3 +82,17 @@ if __name__ == "__main__":
 ```
 in above example i deleted 2 objects that have reference to `db` object, so the reference count will decrease to 0, at this point Garbage collector will pickup `db` object, delete it and release the memory back to operating system.
 
+
+Mark and Sweep
+Another method of releasing memory, as the name explains this method consist of 2 steps, one is mark, the other is sweep. Mark is when MRI choose any objects to be deleted from memory, it decide which object to be deleted by tracing it connection to the root. You can imagine root as the main program, whenever an object created, root will extend a connection line into that object.
+Root -> A -> B
+Take an example above, Root created object A, then A created object B, the connections become like above. When garbage collection mark and sweep algorithm exectuted during this condition, no object will be delted. No memory will be released.
+Now lets say, object got deleted by the program, the connection become like:
+root B
+B not getting deleted by the program, but doesnt have connection with root anymore, so when garbage collection mark and sweep executed during this condition, B will get deleted and the memory will be released. this method is fine and all, but 1 major thing that need to be noted about this is it "stop the world". Whenever this being executed, the program will be stopped, your program wont be able to process anything, and tracing all the connection from root to leaves everytime, taking so much time to be finished. So there's a need to improvise this methid which going to be explained in the next method.
+
+Generational Mark and Sweep
+This is the same method as i explained above, except with an improvement. The improvement is based on assumption (or fact) that "Object generally die young", so most of object generally not used anymore after first few usages / calls. If the object still have connection with the root after 1 generation, usually it means the object meant to be long-lived one and does not need to be deleted until the end of program live. So what is the improvement? everytime mark and sweep finished, any object survive during the sweep will be moved to "old generation". Whenever mark and sweep getting executed, it does not need to check any object inside "old generation", as explained before, any object survive usually means it need to live until the end of program. With this improvement mark and sweep that "stop the world" does not need to take so much time to check all the objects.
+
+
+To be continued to part 2
